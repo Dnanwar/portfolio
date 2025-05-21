@@ -279,7 +279,7 @@ function App() {
           }}
         >
           <TypingText
-            message="Hi, I am Daniyal Anwar"
+            message="Hey, I'm Daniyal Anwar"
             start={currentPage == 0}
           />
         </ParallaxLayer>
