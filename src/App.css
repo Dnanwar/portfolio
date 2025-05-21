@@ -36,3 +36,61 @@
     transform: rotate(360deg);
   }
 }
+
+.expanding-gradient {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: 50%;
+  /* background: linear-gradient(135deg, #4c83ff, #ffffff); */
+  background: #000000;
+  z-index: 0;
+  animation: expandBall 0.2s ease-out forwards;
+}
+
+@keyframes expandBall {
+  to {
+    transform: translate(-50%, -50%) scale(10);
+  }
+}
+
+.final-gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  opacity: 0;
+  animation: fadeIn 0.3s ease 0.5s forwards;
+}
+
+.final-gradient::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  /* background: linear-gradient(135deg, #4c83ff, #2afadf); */
+  background: #000000;
+  animation: spinGradient 3s linear infinite;
+  z-index: -1;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spinGradient {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
