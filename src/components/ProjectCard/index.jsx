@@ -13,17 +13,17 @@ const ProjectCard = ({ name, description, githubUrl, liveUrl }) => {
 
   return (
     <div
-      className="glass-card"
+      className={`glass-card ${expanded ? "expanded-card" : ""}`}
       style={{
         position: "relative",
-        width: "clamp(280px, 28vw, 400px)", // auto-scales between 280px and 400px
-        aspectRatio: "4 / 3", // maintain 4:3
+        width: "clamp(280px, 28vw, 400px)",
+        aspectRatio: "4 / 3",
         padding: "20px",
         boxSizing: "border-box",
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        minWidth: "260px", // optional
+        minWidth: "260px",
       }}
     >
       {/* Project Name and GitHub */}

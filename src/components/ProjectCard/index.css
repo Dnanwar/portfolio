@@ -52,3 +52,25 @@ a {
 a:hover {
   color: #f0db4f;
 }
+/* Apply mobile-specific changes only */
+@media (max-width: 768px) {
+  .glass-card.expanded-card {
+    width: 85vw !important;
+    aspect-ratio: auto !important;
+    min-height: 300px;
+    transform: rotateY(0deg) scale(1.03);
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    padding: 24px;
+    z-index: 99;
+  }
+
+  .glass-card {
+    transform: perspective(1000px) rotateY(5deg);
+    transition: transform 0.3s ease;
+  }
+
+  .glass-card:hover {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+}

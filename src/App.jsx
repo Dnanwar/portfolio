@@ -218,12 +218,33 @@ function App() {
     opacity: currentPage > 0 && currentPage < 3 ? 1 : 0,
     config: { tension: 250, friction: 20 },
   });
-  const panelStyle = (index) => ({
-    display: "inline-block",
-    transition: "transform 0.3s ease",
-    transform: `scale(${index === activeIndex ? 1.05 : 0.75})`,
-    opacity: 1,
-  });
+  const panelStyle = (index) => {
+    if (isMobile) {
+      // Mobile: center the active card and hide others
+      const isActive = index === activeIndex;
+      return {
+        display: "inline-block",
+        transition: "transform 0.5s ease, opacity 0.3s ease",
+        transform: isActive
+          ? "translateX(0%) scale(1.1)"
+          : index < activeIndex
+          ? "translateX(-100%) scale(0.8)"
+          : "translateX(100%) scale(0.8)",
+        opacity: isActive ? 1 : 0.3,
+        position: "absolute",
+        left: "50%",
+        marginLeft: "-150px", // Adjust based on your card width
+      };
+    } else {
+      // Desktop: original behavior
+      return {
+        display: "inline-block",
+        transition: "transform 0.3s ease",
+        transform: `scale(${index === activeIndex ? 1.25 : 0.75})`,
+        opacity: 1,
+      };
+    }
+  };
 
   // Calculate local progress for the Achievements section
   const achievementCardSpring = useSpring({
@@ -386,9 +407,10 @@ function App() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                flexWrap: "wrap",
-                gap: "40px",
+                flexWrap: "no-wrap",
+                gap: isMobile ? "0px" : "40px", // No gap on mobile since cards are positioned absolutely
                 width: "100%",
+                position: "relative", // Add relative positioning for mobile absolute positioning
               }}
             >
               {projectData.map((project, idx) => (
