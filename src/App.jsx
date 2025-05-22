@@ -269,13 +269,13 @@ function App() {
 
   const experienceCardSpring = useSpring({
     width:
-      scrollProgressExperience < 0.2
+      scrollProgressExperience < 0.1
         ? `${Math.max(scrollProgressExperience * 100, 0)}%`
         : scrollProgressExperience > 1.5
         ? `${Math.min((1 - scrollProgressExperience) * 100, 0)}%`
         : "100%",
     transform:
-      scrollProgressExperience < 0.2
+      scrollProgressExperience < 0.1
         ? `translateX(${(1 - scrollProgressExperience * 2) * 150}%)`
         : scrollProgressExperience > 1.5
         ? `translateX(150%)`

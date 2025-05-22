@@ -44,7 +44,7 @@ const ProjectCard = ({ name, description, githubUrl, liveUrl }) => {
             margin: 0,
             color: "white",
             fontWeight: 400,
-            fontSize: "1.5rem",
+            fontSize: "1rem",
           }}
         >
           {name}
