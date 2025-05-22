@@ -29,6 +29,15 @@ function App() {
   // Define the path points for the paper plane
 
   const [containerWidth, setContainerWidth] = useState(2000);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     function handleResize() {
@@ -241,13 +250,13 @@ function App() {
     width:
       scrollProgressExperience < 0.2
         ? `${Math.max(scrollProgressExperience * 100, 0)}%`
-        : scrollProgressExperience > 0.6
+        : scrollProgressExperience > 1.5
         ? `${Math.min((1 - scrollProgressExperience) * 100, 0)}%`
         : "100%",
     transform:
       scrollProgressExperience < 0.2
         ? `translateX(${(1 - scrollProgressExperience * 2) * 150}%)`
-        : scrollProgressExperience > 0.6
+        : scrollProgressExperience > 1.5
         ? `translateX(150%)`
         : `translateX(0%)`,
     opacity:
@@ -298,7 +307,7 @@ function App() {
             style={{
               backgroundImage: `url(${laptop})`,
               backgroundRepeat: "no-repeat",
-              backgroundSize: "45%",
+              backgroundSize: isMobile ? "90%" : "45%",
               backgroundPosition: "center",
               width: "100%",
               height: "100%",
@@ -455,7 +464,7 @@ function App() {
             {/* Left Glass Card */}
             <div
               style={{
-                flex: 1,
+                flex: isMobile ? 8 : 1,
                 alignItems: "center",
                 display: "flex",
                 justifyContent: "flex-start",
@@ -463,53 +472,6 @@ function App() {
                 // display: currentPage >= 4 ? "none" : "flex",
               }}
             >
-              {/* <div
-                style={{
-                  background: "rgba(255,255,255,0.18)",
-                  // borderRadius: "30px",
-                  boxShadow: "0 8px 32px rgba(0,0,0,0.20)",
-                  backdropFilter: "blur(14px)",
-                  WebkitBackdropFilter: "blur(14px)",
-                  border: "1.5px solid rgba(255,255,255,0.24)",
-                  color: "#111",
-                  padding: "40px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "flex-start",
-                  minHeight: "340px",
-                  height: "100%",
-                  width: "100%",
-                }}
-              >
-                <h1
-                  style={{
-                    fontSize: "2rem",
-                    fontWeight: 100,
-                    marginBottom: "20px",
-                  }}
-                >
-                  Achievements
-                </h1>
-                <ul
-                  style={{
-                    fontSize: "1rem",
-                    lineHeight: "1.8",
-                    paddingLeft: "20px",
-                  }}
-                >
-                  <li>
-                    🏆 Won HackFest 2024 with AI-based anti-money laundering
-                    tool
-                  </li>
-                  <li>🚀 Deployed 3 full-stack ML apps to Heroku and Vercel</li>
-                  <li>
-                    📊 Built code complexity analyzer for production-grade
-                    pipelines
-                  </li>
-                </ul>
-              </div> */}
-
               <animated.div
                 style={{
                   ...achievementCardSpring,
@@ -590,7 +552,7 @@ function App() {
             {/* Right Glass Card */}
             <div
               style={{
-                flex: 1,
+                flex: isMobile ? 8 : 1,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "flex-end",

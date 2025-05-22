@@ -1,15 +1,15 @@
 .contact-section {
   width: 100vw;
-  height: 100%;
-  /* background: white; */
+  min-height: 100vh;
   background: url("../../assets/images/me_bck.png") center no-repeat, white;
-  background-size: 85% auto; /* Both images 22% of container width */
+  background-size: 85% auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 0 0 0;
+  padding: 2rem 1rem 1rem 1rem; /* Reduced padding for smaller height */
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* ⬅️ disable internal scroll */
+  box-sizing: border-box;
 }
 
 .background-elements {
@@ -255,19 +255,52 @@ button[type="submit"]:disabled {
 
 /* Mobile Responsive */
 @media (max-width: 900px) {
-  .contact-container {
+  .contact-columns {
     flex-direction: column;
-    align-items: stretch;
-    width: 98%;
-    gap: 1.3rem;
+    align-items: center;
+    width: 100%;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
   }
+
   .contact-info,
   .contact-form-container {
     width: 100%;
-    min-width: 0;
-    max-width: unset;
+    max-width: 100%; /* Allow full width */
+    box-sizing: border-box;
   }
+
   .frosted-card {
-    padding: 22px 10px;
+    padding: 1rem;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .form-group {
+    margin-bottom: 0.7rem;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    font-size: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+  }
+
+  .success-message {
+    font-size: 0.9rem;
   }
 }
