@@ -144,11 +144,16 @@ const Achievements = ({ scrollContainer }) => {
         <ul
           style={{ fontSize: "1rem", lineHeight: "1.8", paddingLeft: "20px" }}
         >
-          <li>🏆 Won HackFest 2024 with AI-based anti-money laundering tool</li>
-          <li>🚀 Deployed 3 full-stack ML apps to Heroku and Vercel</li>
           <li>
-            📊 Built code complexity analyzer for production-grade pipelines
+            🏆 Winner of Tredence HackFest 2024 (1st place among 40 global
+            teams)
           </li>
+          <li>⚙️ 4★ Coder on CodeChef with peak rating of 1820</li>
+          <li>🌍 Global Rank 53 in CodeChef Starters 112</li>
+          <li>🧠 LeetCode Top 5% with 3★ and rating of 1838</li>
+          <li>☁️ Google Cloud Certified Professional Data Engineer</li>
+          <li>🔧 Microsoft Certified Azure Data Engineer Associate</li>
+          <li>🩺 A-grade ML Medical Assistance Project (Thapar University)</li>
         </ul>
       </div>
       <div

@@ -99,22 +99,24 @@ function App() {
       name: "Book Recommender",
       description:
         "Collaborative Recommender with an intuitive React frontend and a Flask backend, deployed on Heroku. Utilizes user interaction data to compute pairwise cosine similarity, powering personalized recommendations through a lightweight and efficient algorithm.",
-      githubUrl: "https://github.com/your-username/code-visualizer",
-      liveUrl: "https://codevisualizer.vercel.app",
+      githubUrl:
+        "https://github.com/Dnanwar/Collaborative-Recommendation-Book-Recommender-FLASK",
+      liveUrl: "",
     },
     {
       name: "Youtube Shorts Creator",
       description:
         "A smart tool designed to create and preview 30-second short-format videos. It leverages viewer heatmaps from popular YouTube videos to identify the most engaging moments, then processes these highlights to suggest optimized short-form content. The tool also includes a mobile preview mode to simulate how the Shorts will appear on a phone, ensuring a seamless viewer experience across platforms.",
-      githubUrl: "https://github.com/your-username/sql-translator",
-      liveUrl: "https://sqltranslator.vercel.app",
+      githubUrl: "https://github.com/stars/Dnanwar/lists/shorts-creator",
+      liveUrl: "https://shorts-creator-fe-796467600518.asia-south1.run.app/",
     },
     {
       name: "Neural Network (No Libraries)",
       description:
         "Built a Neural Network from scratch without using any ML libraries. Implemented forward and backward propagation, weight updates, biases, ReLU, and SoftMax activation functions to train and evaluate the model.",
-      githubUrl: "https://github.com/your-username/security-diff",
-      liveUrl: "https://securitydiff.vercel.app",
+      githubUrl:
+        "https://github.com/Dnanwar/Building-Neural-Network-Model-Without-Libraries",
+      liveUrl: "",
     },
   ];
   // On initial load — stabilize stickies
@@ -529,17 +531,96 @@ function App() {
                   style={{
                     fontSize: "1rem",
                     lineHeight: "1.8",
-                    paddingLeft: "20px",
+                    paddingLeft: 0,
+                    listStyle: "none",
                   }}
                 >
-                  <li>
-                    🏆 Won HackFest 2024 with AI-based anti-money laundering
-                    tool
+                  <li style={{ marginBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        fontSize: "1.1rem",
+                        color: "#222",
+                      }}
+                    >
+                      Winner – HackFest 2024
+                    </div>
+                    <div style={{ color: "#555" }}>
+                      1st place among 40 global teams for building an AI-based
+                      Anti-Money Laundering tool.
+                    </div>
                   </li>
-                  <li>🚀 Deployed 3 full-stack ML apps to Heroku and Vercel</li>
-                  <li>
-                    📊 Built code complexity analyzer for production-grade
-                    pipelines
+                  <li style={{ marginBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        fontSize: "1.1rem",
+                        color: "#222",
+                      }}
+                    >
+                      CodeChef 4★ | Rating: 1820
+                    </div>
+                    <div style={{ color: "#555" }}>
+                      Global Rank 53 in Starters 112 competition.
+                    </div>
+                  </li>
+                  <li style={{ marginBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        fontSize: "1.1rem",
+                        color: "#222",
+                      }}
+                    >
+                      LeetCode
+                    </div>
+                    <div style={{ color: "#555" }}>
+                      Top 5% globally with 3-star rating and contest rating of
+                      1838.
+                    </div>
+                  </li>
+                  <li style={{ marginBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        fontSize: "1.1rem",
+                        color: "#222",
+                      }}
+                    >
+                      Google Cloud Certified
+                    </div>
+                    <div style={{ color: "#555" }}>
+                      Professional Cloud Data Engineer – GCP.
+                    </div>
+                  </li>
+                  <li style={{ marginBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        fontSize: "1.1rem",
+                        color: "#222",
+                      }}
+                    >
+                      Microsoft Azure Certified
+                    </div>
+                    <div style={{ color: "#555" }}>
+                      Data Engineer Associate – Azure.
+                    </div>
+                  </li>
+                  <li style={{ marginBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        fontSize: "1.1rem",
+                        color: "#222",
+                      }}
+                    >
+                      ML Medical Project
+                    </div>
+                    <div style={{ color: "#555" }}>
+                      Awarded A-grade at Thapar University for
+                      healthcare-focused ML system.
+                    </div>
                   </li>
                 </ul>
               </animated.div>
@@ -616,12 +697,64 @@ function App() {
                   style={{
                     fontSize: "1rem",
                     lineHeight: "1.8",
-                    paddingLeft: "20px",
+                    paddingLeft: 0,
+                    listStyle: "none",
                   }}
                 >
-                  <li>💼 Frontend Developer at TechCorp (2023-2024)</li>
-                  <li>🔧 Software Engineering Intern at DataSystems (2022)</li>
-                  <li>📱 Mobile App Developer at StartupX (2021-2022)</li>
+                  <li style={{ marginBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        fontSize: "1.1rem",
+                        color: "#222",
+                      }}
+                    >
+                      Software Developer (R&D) – Tredence Inc.
+                    </div>
+                    <div style={{ color: "#777" }}>
+                      Jun 2023 – Present | Bengaluru
+                    </div>
+                    <div style={{ color: "#555" }}>
+                      FastAPI, NextJS, Langchain, GCP – Focused on cloud
+                      modernization and LLM applications.
+                    </div>
+                  </li>
+                  <li style={{ marginBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        fontSize: "1.1rem",
+                        color: "#222",
+                      }}
+                    >
+                      Intern Developer – Mantiqh Technologies
+                    </div>
+                    <div style={{ color: "#777" }}>
+                      Jan 2023 – Jun 2023 | Bengaluru
+                    </div>
+                    <div style={{ color: "#555" }}>
+                      Built React Native apps, enhanced booking logic, and
+                      implemented automated testing.
+                    </div>
+                  </li>
+                  <li style={{ marginBottom: "1.5rem" }}>
+                    <div
+                      style={{
+                        fontWeight: 600,
+                        fontSize: "1.1rem",
+                        color: "#222",
+                      }}
+                    >
+                      Student ML Developer – Thapar University
+                    </div>
+                    <div style={{ color: "#777" }}>
+                      Jan 2022 – Oct 2022 | Patiala
+                    </div>
+                    <div style={{ color: "#555" }}>
+                      Designed ML models for health classification using
+                      TensorFlow, Scikit-Learn.
+                    </div>
+                  </li>
                 </ul>
               </animated.div>
             </div>

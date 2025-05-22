@@ -8,6 +8,8 @@ import {
   ExternalLink,
   Send,
   MapPin,
+  CodeXml,
+  ChefHat,
 } from "lucide-react";
 import "./index.css";
 
@@ -26,15 +28,29 @@ const Contacts = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   setTimeout(() => {
+  //     setIsSubmitting(false);
+  //     setSubmitStatus("success");
+  //     setFormData({ name: "", email: "", subject: "", message: "" });
+  //     setTimeout(() => setSubmitStatus(null), 5000);
+  //   }, 1500);
+  // };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setSubmitStatus(null), 5000);
-    }, 1500);
+    const { name, email, subject, message } = formData;
+
+    const whatsappMessage = encodeURIComponent(
+      `Hello Daniyal,\n\nName: ${name}\nEmail: ${email}\nSubject: ${subject}\n\n${message}`
+    );
+
+    const phoneNumber = "917319717843"; // Your number without +
+    const whatsappURL = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${whatsappMessage}`;
+
+    window.open(whatsappURL, "_blank");
   };
 
   return (
@@ -74,8 +90,8 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p>Email</p>
-                  <a href="mailto:daniyal.anwar@example.com">
-                    daniyal.anwar@example.com
+                  <a href="mailto:daniyal.anwar863@gmail.com">
+                    daniyal.anwar863@gmail.com
                   </a>
                 </div>
               </div>
@@ -85,7 +101,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p>Phone</p>
-                  <a href="tel:+1234567890">+1 (234) 567-890</a>
+                  <a href="tel:+917319717843">(+91)731-971-7843</a>
                 </div>
               </div>
               <div className="info-item">
@@ -94,7 +110,7 @@ const Contacts = () => {
                 </div>
                 <div>
                   <p>Location</p>
-                  <span>San Francisco, CA</span>
+                  <span>Bengaluru Karnataka, India</span>
                 </div>
               </div>
             </div>
@@ -103,7 +119,7 @@ const Contacts = () => {
             <h3>Connect With Me</h3>
             <div className="social-links">
               <a
-                href="https://github.com/daniyal-anwar"
+                href="https://github.com/Dnanwar"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -111,7 +127,7 @@ const Contacts = () => {
                 <span>GitHub</span>
               </a>
               <a
-                href="https://linkedin.com/in/daniyal-anwar"
+                href="https://www.linkedin.com/in/daniyal-anwar-14b8301b0"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -119,20 +135,20 @@ const Contacts = () => {
                 <span>LinkedIn</span>
               </a>
               <a
-                href="https://twitter.com/daniyal_anwar"
+                href="https://leetcode.com/u/r4ptr"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <Twitter size={18} color="#1DA1F2" />
-                <span>Twitter</span>
+                <CodeXml size={18} color="#FFA116" />
+                <span>Leetcode</span>
               </a>
               <a
-                href="https://daniyal-portfolio.vercel.app"
+                href="https://www.codechef.com/users/beitdaniyal"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <ExternalLink size={18} color="#673AB7" />
-                <span>Portfolio</span>
+                <ChefHat size={18} color="#5B4638" />
+                <span>CodeChef</span>
               </a>
             </div>
           </div>

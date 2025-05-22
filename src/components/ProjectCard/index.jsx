@@ -23,10 +23,9 @@ const ProjectCard = ({ name, description, githubUrl, liveUrl }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        minWidth: "260px",
       }}
     >
-      {/* Project Name and GitHub */}
+      {/* Project Name and GitHub/Live */}
       <div
         style={{
           width: "100%",
@@ -34,8 +33,8 @@ const ProjectCard = ({ name, description, githubUrl, liveUrl }) => {
           paddingBottom: "8px",
           borderBottom: "1px solid rgba(255, 255, 255, 0.3)",
           display: "flex",
-          alignItems: "center",
           justifyContent: "space-between",
+          alignItems: "center",
         }}
       >
         <h2
@@ -45,24 +44,75 @@ const ProjectCard = ({ name, description, githubUrl, liveUrl }) => {
             color: "white",
             fontWeight: 400,
             fontSize: "1rem",
+            lineHeight: 1.2,
           }}
         >
           {name}
         </h2>
 
-        {githubUrl && (
-          <a href={githubUrl} target="_blank" rel="noopener noreferrer">
-            <img
-              src={gitHub}
-              alt="GitHub"
-              style={{
-                width: "20px",
-                height: "20px",
-                objectFit: "contain",
-                filter: "brightness(0) invert(1)",
-              }}
-            />
-          </a>
+        {(githubUrl || liveUrl) && (
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "10px",
+              height: "20px", // Fixed height container
+            }}
+          >
+            {liveUrl && (
+              <a
+                href={liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "4px",
+                  textDecoration: "none",
+                  color: "#ff4c4c",
+                  fontSize: "0.75rem",
+                  fontWeight: 500,
+                  height: "20px", // Match container height
+                }}
+              >
+                <span
+                  style={{
+                    width: "8px",
+                    height: "8px",
+                    borderRadius: "50%",
+                    background: "#ff4c4c",
+                    boxShadow: "0 0 6px 2px #ff4c4c",
+                    display: "inline-block",
+                  }}
+                />
+                Live
+              </a>
+            )}
+            {githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: "flex", // Change to flex
+                  alignItems: "center", // Center the image vertically
+                  height: "20px", // Match container height
+                }}
+              >
+                <img
+                  src={gitHub}
+                  alt="GitHub"
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    objectFit: "contain",
+                    filter: "brightness(0) invert(1)",
+                    display: "block", // Remove any inline spacing
+                  }}
+                />
+              </a>
+            )}
+          </div>
         )}
       </div>
 
