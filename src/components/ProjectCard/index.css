@@ -66,6 +66,9 @@ a:hover {
   }
 
   .glass-card {
+    aspect-ratio: auto !important;
+    min-height: 250px !important;
+    height: auto !important;
     transform: perspective(1000px) rotateY(5deg);
     transition: transform 0.3s ease;
   }

@@ -17,7 +17,8 @@ const ProjectCard = ({ name, description, githubUrl, liveUrl }) => {
       style={{
         position: "relative",
         width: "clamp(280px, 28vw, 400px)",
-        aspectRatio: "4 / 3",
+        aspectRatio: window.innerWidth <= 768 ? "auto" : "4 / 3", // Dynamic aspect ratio
+        minHeight: window.innerWidth <= 768 ? "250px" : "auto", // Minimum height on mobile
         padding: "20px",
         boxSizing: "border-box",
         display: "flex",
